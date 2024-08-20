@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import axios from 'axios';
+import useShowToast from '../Hooks/Showtoast';
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -13,7 +14,7 @@ const Login = () => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-
+const showToast =useShowToast();
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError("");
@@ -33,6 +34,7 @@ const Login = () => {
       sessionStorage.setItem('userName', userName);
   
       setSuccess("Login successful!");
+showToast("Logged in Successfully")
       // Optionally, redirect to the dashboard or home page
       window.location.href = '/getuser'; // Adjust the path as needed
   

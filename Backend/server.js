@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 
 import userRouter from "./routes/userRoutes.js";
 
-// Load environment variables
+// Load environment variables (Getting data from env File)!..
 dotenv.config();
 
 const app = express();

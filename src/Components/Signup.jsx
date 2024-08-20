@@ -57,13 +57,11 @@ const SignUp = () => {
     }
 
     try {
-      // Combine country code and mobile number
-      // const fullMobileNumber = formData.countryCode + formData.mobileNumber;
+
 
       const response = await axios.post('http://localhost:5000/api/signup', {
         name: formData.name,
         email: formData.email,
-        // mobileNumber: fullMobileNumber, // Send combined number
         countryCode : formData.countryCode,
         mobileNumber:formData.mobileNumber,
         gender: formData.gender,

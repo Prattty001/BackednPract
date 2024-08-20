@@ -16,6 +16,9 @@ const ForgotPassword = () => {
       const response = await axios.post('http://localhost:5000/api/check-email', { email });
 
       if (response.data.exists) {
+        //sending email !>
+//This email is used to check from the databse that comfirms the email and checks the database for
+//the verifications!...
         navigate('/confirm-password',{ state: { email } }); // Redirect to the confirm password page if email exists
       } else {
         setError('Email not found. Please enter a valid email.');
